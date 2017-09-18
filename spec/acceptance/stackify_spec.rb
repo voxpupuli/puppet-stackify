@@ -25,18 +25,17 @@ describe 'stackify' do
   #
   # [Device]
   # DeviceID=101
-  before(:all) do
-    @activation_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXX'
-    @environment    = 'development'
-  end
+
+  let(:activation_key) { 'XXXXXXXXXXXXXXXXXXXXXXXXXX' }
+  let(:environment) { 'development' }
 
   context 'when installing with provided mandatory parameters' do
     let(:install_manifest) do
       <<-MANIFEST
           class { 'stackify':
               package_ensure                        => 'present',
-              package_install_options_environment   => '#{@environment}',
-              package_install_options_activationkey => '#{@activation_key}',
+              package_install_options_environment   => '#{environment}',
+              package_install_options_activationkey => '#{activation_key}',
           }
         MANIFEST
     end
@@ -71,12 +70,12 @@ describe 'stackify' do
     end
 
     describe file('C:\Program Files (x86)\Stackify\Stackify.ini') do
-      its (:content) { is_expected.to match %r{ActivationKey=#{@activation_key}} }
-      its (:content) { is_expected.to match %r{DeviceAlias=#{fact('hostname')}} }
-      its (:content) { is_expected.to match %r{Environment=#{@environment}} }
-      its (:content) { is_expected.to match %r{EnableProfiler=1} }
-      its (:content) { is_expected.to match %r{IPMask=0} }
-      its (:content) { is_expected.to match %r{AttachAll=1} }
+      its(:content) { is_expected.to match %r{ActivationKey=#{activation_key}} }
+      its(:content) { is_expected.to match %r{DeviceAlias=#{fact('hostname')}} }
+      its(:content) { is_expected.to match %r{Environment=#{environment}} }
+      its(:content) { is_expected.to match %r{EnableProfiler=1} }
+      its(:content) { is_expected.to match %r{IPMask=0} }
+      its(:content) { is_expected.to match %r{AttachAll=1} }
     end
 
     describe file('C:\Binaries') do

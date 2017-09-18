@@ -3,7 +3,7 @@ require 'beaker-rspec/helpers/serverspec'
 require 'beaker/puppet_install_helper'
 require 'winrm'
 
-GEOTRUST_GLOBAL_CA = <<-EOM.freeze
+GEOTRUST_GLOBAL_CA = <<-CERT.freeze
 -----BEGIN CERTIFICATE-----
 MIIDVDCCAjygAwIBAgIDAjRWMA0GCSqGSIb3DQEBBQUAMEIxCzAJBgNVBAYTAlVT
 MRYwFAYDVQQKEw1HZW9UcnVzdCBJbmMuMRswGQYDVQQDExJHZW9UcnVzdCBHbG9i
@@ -24,7 +24,7 @@ PseKUgzbFbS9bZvlxrFUaKnjaZC2mqUPuLk/IH2uSrW4nOQdtqvmlKXBx4Ot2/Un
 hw4EbNX/3aBd7YdStysVAq45pmp06drE57xNNB6pXE0zX5IJL4hmXXeXxx12E6nV
 5fEWCRE11azbJHFwLJhWC9kXtNHjUStedejV0NxPNO3CBWaAocvmMw==
 -----END CERTIFICATE-----
-EOM
+CERT
 
 hosts.each do |host|
   run_puppet_install_helper
