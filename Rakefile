@@ -6,7 +6,6 @@ require "guard/rake_task"
 
 
 Guard::RakeTask.new(:guard)
-RuboCop::RakeTask.new
 
 PuppetLint.configuration.send('disable_80chars')
 PuppetLint.configuration.relative = true
