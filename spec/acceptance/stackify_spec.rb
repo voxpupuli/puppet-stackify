@@ -1,7 +1,6 @@
 require 'spec_helper_acceptance'
 
 describe 'stackify' do
-
   # EXAMPLE stackify.ini
   # [License]
   # ActivationKey=XXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -32,7 +31,7 @@ describe 'stackify' do
   end
 
   context 'when installing with provided mandatory parameters' do
-    let(:install_manifest) {
+    let(:install_manifest) do
       <<-MANIFEST
           class { 'stackify':
               package_ensure                        => 'present',
@@ -40,60 +39,59 @@ describe 'stackify' do
               package_install_options_activationkey => '#{@activation_key}',
           }
         MANIFEST
-    }
-
-    it 'should run without errors' do
-      apply_manifest(install_manifest, :catch_failures => true)
     end
 
-    it 'should be idempotent' do
-      apply_manifest(install_manifest, :catch_changes => true)
+    it 'runs without errors' do
+      apply_manifest(install_manifest, catch_failures: true)
+    end
+
+    it 'is idempotent' do
+      apply_manifest(install_manifest, catch_changes: true)
     end
 
     describe package('StackifyAgentProd') do
-      it { should be_installed }
+      it { is_expected.to be_installed }
     end
 
     describe service('StackifyHealthService') do
-      it { should be_enabled }
-      it { should be_installed }
-      it { should be_running }
+      it { is_expected.to be_enabled }
+      it { is_expected.to be_installed }
+      it { is_expected.to be_running }
     end
 
     describe service('StackifyMonitoringService') do
-      it { should be_enabled }
-      it { should be_installed }
-      it { should be_running }
+      it { is_expected.to be_enabled }
+      it { is_expected.to be_installed }
+      it { is_expected.to be_running }
     end
 
     describe file('C:\Program Files (x86)\Stackify') do
-       it { should exist }
-       it { should be_directory }
+      it { is_expected.to exist }
+      it { is_expected.to be_directory }
     end
 
     describe file('C:\Program Files (x86)\Stackify\Stackify.ini') do
-       its (:content) { should match /ActivationKey=#{@activation_key}/ }
-       its (:content) { should match /DeviceAlias=#{fact('hostname')}/ }
-       its (:content) { should match /Environment=#{@environment}/ }
-       its (:content) { should match /EnableProfiler=1/ }
-       its (:content) { should match /IPMask=0/ }
-       its (:content) { should match /AttachAll=1/ }
+      its (:content) { is_expected.to match %r{ActivationKey=#{@activation_key}} }
+      its (:content) { is_expected.to match %r{DeviceAlias=#{fact('hostname')}} }
+      its (:content) { is_expected.to match %r{Environment=#{@environment}} }
+      its (:content) { is_expected.to match %r{EnableProfiler=1} }
+      its (:content) { is_expected.to match %r{IPMask=0} }
+      its (:content) { is_expected.to match %r{AttachAll=1} }
     end
 
     describe file('C:\Binaries') do
-       it { should exist }
-       it { should be_directory }
+      it { is_expected.to exist }
+      it { is_expected.to be_directory }
     end
 
     describe file('C:\Binaries\Stackify-Install-Latest.exe') do
-       it { should exist }
-       it { should be_file }
+      it { is_expected.to exist }
+      it { is_expected.to be_file }
     end
-
   end
 
   context 'when uninstalling with provided mandatory parameters' do
-    let(:uninstall_manifest) {
+    let(:uninstall_manifest) do
       <<-MANIFEST
           class { 'stackify':
               package_ensure                        => 'absent',
@@ -101,37 +99,35 @@ describe 'stackify' do
               package_install_options_activationkey => 'XXXXXXXXXXXXXXXXXXXXXXXXXX',
           }
         MANIFEST
-    }
-
-    it 'should run without errors' do
-      apply_manifest(uninstall_manifest, :catch_failures => true)
     end
 
-    it "should be idempotent" do
-      apply_manifest(uninstall_manifest, :catch_changes => true)
+    it 'runs without errors' do
+      apply_manifest(uninstall_manifest, catch_failures: true)
+    end
+
+    it 'is idempotent' do
+      apply_manifest(uninstall_manifest, catch_changes: true)
     end
 
     describe package('StackifyAgentProd') do
-      it { should_not be_installed }
+      it { is_expected.not_to be_installed }
     end
 
     describe service('StackifyHealthService') do
-      it { should_not be_installed }
+      it { is_expected.not_to be_installed }
     end
 
     describe service('StackifyMonitoringService') do
-      it { should_not be_installed }
+      it { is_expected.not_to be_installed }
     end
 
     describe file('C:\Binaries') do
-       it { should exist }
-       it { should be_directory }
+      it { is_expected.to exist }
+      it { is_expected.to be_directory }
     end
     # TODO: We should remove the binary after install
     # describe file('C:\Binaries\Stackify-Install-Latest.exe') do
     #    it { should_not exist }
     # end
-
   end
-
 end
