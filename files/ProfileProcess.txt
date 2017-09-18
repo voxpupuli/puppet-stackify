@@ -1,0 +1,11 @@
+[
+   {
+      "exe":"nservicebus.host.exe"
+   },
+   {
+      "exe":"Autobahn.Ordering.Host.exe"
+    },
+   {
+      "exe":"Autobahn.SalesOrderTracking.Host.exe"
+   }
+]
