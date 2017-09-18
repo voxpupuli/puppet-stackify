@@ -1,6 +1,8 @@
 .bundle/
 .vagrant/
-.yardoc/
-doc/
 log/
 spec/fixtures/
+.yardoc/
+doc/
+pkg/
+Gemfile.lock
