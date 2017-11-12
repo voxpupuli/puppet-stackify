@@ -23,7 +23,7 @@ describe 'stackify::service' do
     let(:params) do
       {
         service_manage: true,
-        service_enable: true,
+        service_enable: true
       }
     end
 
@@ -43,7 +43,7 @@ describe 'stackify::service' do
       {
         'service_manage' => true,
         'service_ensure' => 'stopped',
-        'service_enable' => false,
+        'service_enable' => false
       }
     end
 
@@ -62,7 +62,7 @@ describe 'stackify::service' do
     let(:params) do
       {
         'service_manage' => true,
-        'service_ensure' => 'running',
+        'service_ensure' => 'running'
       }
     end
 

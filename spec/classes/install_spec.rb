@@ -4,13 +4,13 @@ describe 'stackify::install' do
   context 'when package_ensure => present' do
     let(:facts) do
       {
-        hostname: 'DESKTOP-AT3',
+        hostname:        'DESKTOP-AT3'
       }
     end
     let(:params) do
       {
         package_install_options_environment: 'qa3',
-        package_install_options_activationkey: 'SomeSecretKey',
+        package_install_options_activationkey: 'SomeSecretKey'
       }
     end
 
@@ -28,7 +28,7 @@ describe 'stackify::install' do
                                                                  'ATTACHALL=1',
                                                                  '/qn',
                                                                  '/l*v',
-                                                                 'C:\StackifyInstallLog.txt"',
+                                                                 'C:\StackifyInstallLog.txt"'
                                                                ])
     end
 
@@ -41,32 +41,19 @@ describe 'stackify::install' do
                                                                                     'source'  => 'http://s1.stackify.com/Account/AgentDownload',
                                                                                     'require' => 'File[C:\\Binaries]')
     end
-
-    it { is_expected.to compile.with_all_deps }
-  end
-
-  context 'when package_install_options_environment => ""' do
-    let(:params) do
-      {
-        package_install_options_environment: '',
-        package_install_options_activationkey: 'SomeSecretKey',
-      }
-    end
-
-    it { is_expected.to compile.and_raise_error(%r{The Environment variable was not provided\.  This is a required parameter\.}) }
   end
 
   context 'when package_install_options_attach_all => false' do
     let(:facts) do
       {
-        hostname: 'DESKTOP-AT3',
+        hostname: 'DESKTOP-AT3'
       }
     end
     let(:params) do
       {
         package_install_options_environment: 'qa3',
         package_install_options_activationkey: 'SomeSecretKey',
-        package_install_options_attach_all: false,
+        package_install_options_attach_all: false
       }
     end
 
@@ -84,7 +71,7 @@ describe 'stackify::install' do
                                                                  'ATTACHALL=0',
                                                                  '/qn',
                                                                  '/l*v',
-                                                                 'C:\StackifyInstallLog.txt"',
+                                                                 'C:\StackifyInstallLog.txt"'
                                                                ])
     end
   end
@@ -92,14 +79,14 @@ describe 'stackify::install' do
   context 'when package_install_options_enable_profiler => false' do
     let(:facts) do
       {
-        hostname: 'DESKTOP-AT3',
+        hostname: 'DESKTOP-AT3'
       }
     end
     let(:params) do
       {
         package_install_options_environment: 'qa3',
         package_install_options_activationkey: 'SomeSecretKey',
-        package_install_options_enable_profiler: false,
+        package_install_options_enable_profiler: false
       }
     end
 
@@ -117,7 +104,7 @@ describe 'stackify::install' do
                                                                  'ATTACHALL=1',
                                                                  '/qn',
                                                                  '/l*v',
-                                                                 'C:\StackifyInstallLog.txt"',
+                                                                 'C:\StackifyInstallLog.txt"'
                                                                ])
     end
   end
@@ -125,14 +112,14 @@ describe 'stackify::install' do
   context 'when package_install_options_enable_ipmask => false' do
     let(:facts) do
       {
-        hostname: 'DESKTOP-AT3',
+        hostname: 'DESKTOP-AT3'
       }
     end
     let(:params) do
       {
         package_install_options_environment: 'qa3',
         package_install_options_activationkey: 'SomeSecretKey',
-        package_install_options_enable_ipmask: true,
+        package_install_options_enable_ipmask: true
       }
     end
 
@@ -150,7 +137,7 @@ describe 'stackify::install' do
                                                                  'ATTACHALL=1',
                                                                  '/qn',
                                                                  '/l*v',
-                                                                 'C:\StackifyInstallLog.txt"',
+                                                                 'C:\StackifyInstallLog.txt"'
                                                                ])
     end
   end
