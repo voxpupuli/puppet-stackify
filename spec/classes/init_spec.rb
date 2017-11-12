@@ -4,7 +4,7 @@ describe 'stackify' do
     let(:params) do
       {
         package_install_options_environment: 'qa3',
-        package_install_options_activationkey: 'SomeSecretKey',
+        package_install_options_activationkey: 'SomeSecretKey'
       }
     end
 
