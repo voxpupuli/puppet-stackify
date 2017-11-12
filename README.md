@@ -24,10 +24,10 @@ Stackify if an APM tools that uses an agent on node's that need to be monitored.
 
 The stackify module requires the following:
 
-* Puppet Agent 4.0 or later.
+* Puppet Agent 4.7.1 or later.
 * Access to the internet.
 * Stackify account setup and a license/activation key in hand.
-* Windows Server 2012 or 2012 R2.
+* Windows Server 2012/2012R2/2016.
 
 ### Beginning with stackify
 
