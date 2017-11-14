@@ -1,5 +1,11 @@
 # stackify
 
+[![License](https://img.shields.io/github/license/voxpupuli/puppet-stackify.svg)](https://github.com/voxpupuli/puppet-stackify/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/voxpupuli/puppet-stackify.png?branch=master)](https://travis-ci.org/voxpupuli/puppet-stackify)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/puppet/stackify.svg)](https://forge.puppetlabs.com/puppet/stackify)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/puppet/stackify.svg)](https://forge.puppetlabs.com/puppet/stackify)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/puppet/stackify.svg)](https://forge.puppetlabs.com/puppet/stackify)
+
 #### Table of Contents
 
 1. [Description](#description)
@@ -16,7 +22,7 @@
 
 The stackify module installs and manages the stackify agent and service on Windows systems.
 
-Stackify if an APM tools that uses an agent on node's that need to be monitored.
+Stackify is an APM tools that uses an agent on nodes that need to be monitored.
 
 ## Setup
 
@@ -128,7 +134,7 @@ Default: true.
 
 ## Limitations
 
-This module is  only available for Windows 2012 or 2012 R2 and works with Puppet 4.0 and later.
+This module is only available for Windows 2012 or 2012 R2 and works with Puppet 4.0 and later.
 
 ## Development
 
