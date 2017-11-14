@@ -1,14 +1,29 @@
 {
-  "name": "tragiccode-stackify",
+  "name": "puppet-stackify",
   "version": "0.1.0",
-  "author": "tragiccode",
+  "author": "voxpupuli",
   "summary": "Installs stackify APM agent",
   "license": "Apache-2.0",
-  "source": "https://github.com/tragiccode/tragiccode-stackify",
-  "project_page": "https://github.com/tragiccode/tragiccode-stackify",
-  "issues_url": "https://github.com/tragiccode/tragiccode-stackify/issues",
+  "source": "https://github.com/voxpupuli/puppet-stackify",
+  "project_page": "https://github.com/voxpupuli/puppet-stackify",
+  "issues_url": "https://github.com/voxpupuli/puppet-stackify/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 4.0.0 < 5.0.0"}
+    {"name":"puppetlabs-stdlib","version_requirement":">= 4.13.1 < 5.0.0"}
   ],
-  "data_provider": null
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "windows",
+      "operatingsystemrelease": [
+        "2012",
+        "2012R2",
+        "2016"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.7.1 < 6.0.0"
+    }
+  ]
 }
