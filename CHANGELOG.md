@@ -4,9 +4,17 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v0.1.0](https://github.com/voxpupuli/puppet-stackify/tree/v0.1.0) (2017-11-12)
+## [v0.1.1](https://github.com/voxpupuli/puppet-stackify/tree/v0.1.1) (2017-11-14)
+[Full Changelog](https://github.com/voxpupuli/puppet-stackify/compare/v0.1.0...v0.1.1)
+
 **Merged pull requests:**
 
+- Update travis secrets for forge [\#10](https://github.com/voxpupuli/puppet-stackify/pull/10) ([TraGicCode](https://github.com/TraGicCode))
+
+## [v0.1.0](https://github.com/voxpupuli/puppet-stackify/tree/v0.1.0) (2017-11-14)
+**Merged pull requests:**
+
+- Release v0.1.0 [\#9](https://github.com/voxpupuli/puppet-stackify/pull/9) ([TraGicCode](https://github.com/TraGicCode))
 - Fix rubocop issues [\#8](https://github.com/voxpupuli/puppet-stackify/pull/8) ([TraGicCode](https://github.com/TraGicCode))
 
 
