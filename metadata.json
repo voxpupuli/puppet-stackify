@@ -1,6 +1,6 @@
 {
   "name": "puppet-stackify",
-  "version": "0.1.1",
+  "version": "0.1.2-rc0",
   "author": "voxpupuli",
   "summary": "Installs stackify APM agent",
   "license": "Apache-2.0",
