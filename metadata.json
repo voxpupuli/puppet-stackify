@@ -1,7 +1,7 @@
 {
   "name": "puppet-stackify",
-  "version": "0.1.2-rc0",
-  "author": "voxpupuli",
+  "version": "0.1.2",
+  "author": "Vox Pupuli",
   "summary": "Installs stackify APM agent",
   "license": "Apache-2.0",
   "source": "https://github.com/voxpupuli/puppet-stackify",
