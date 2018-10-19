@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v0.1.3](https://github.com/voxpupuli/puppet-stackify/tree/v0.1.3) (2018-10-19)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-stackify/compare/v0.1.2...v0.1.3)
+
+**Merged pull requests:**
+
+- modulesync 2.2.0 and allow puppet 6.x [\#24](https://github.com/voxpupuli/puppet-stackify/pull/24) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v0.1.2](https://github.com/voxpupuli/puppet-stackify/tree/v0.1.2) (2018-09-06)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-stackify/compare/v0.1.1...v0.1.2)
