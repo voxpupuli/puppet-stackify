@@ -2,7 +2,7 @@
 class stackify::params {
   $package_ensure = 'present'
   $package_name = 'StackifyAgentProd'
-  $package_install_options_device_alias = $facts['hostname']
+  $package_install_options_device_alias = $facts['networking']['hostname']
   $package_install_options_attach_all = true
   $package_install_options_enable_profiler = true
   $package_install_options_enable_ipmask = false
