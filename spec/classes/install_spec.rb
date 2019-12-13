@@ -4,7 +4,7 @@ describe 'stackify::install' do
   context 'when package_ensure => present' do
     let(:facts) do
       {
-        hostname:        'DESKTOP-AT3'
+        networking: { hostname: 'DESKTOP-AT3' }
       }
     end
     let(:params) do
@@ -46,7 +46,7 @@ describe 'stackify::install' do
   context 'when package_install_options_attach_all => false' do
     let(:facts) do
       {
-        hostname: 'DESKTOP-AT3'
+        networking: { hostname: 'DESKTOP-AT3' }
       }
     end
     let(:params) do
@@ -79,7 +79,7 @@ describe 'stackify::install' do
   context 'when package_install_options_enable_profiler => false' do
     let(:facts) do
       {
-        hostname: 'DESKTOP-AT3'
+        networking: { hostname: 'DESKTOP-AT3' }
       }
     end
     let(:params) do
@@ -112,7 +112,7 @@ describe 'stackify::install' do
   context 'when package_install_options_enable_ipmask => false' do
     let(:facts) do
       {
-        hostname: 'DESKTOP-AT3'
+        networking: { hostname: 'DESKTOP-AT3' }
       }
     end
     let(:params) do
