@@ -1,5 +1,5 @@
 # Installs stackify
-class stackify::install(
+class stackify::install (
   String $package_install_options_activationkey,
   String $package_install_options_environment,
   String $package_install_options_device_alias = $stackify::params::package_install_options_device_alias,
@@ -12,7 +12,6 @@ class stackify::install(
   Stdlib::Absolutepath $file_download_absolute_path = $stackify::params::file_download_absolute_path,
   String $file_download_source = $stackify::params::file_download_source,
 ) inherits stackify::params {
-
   if ! defined(File[$file_download_directory]) {
     file { $file_download_directory:
       ensure => directory, # Unfortunately i need to not clean this up ever
@@ -20,7 +19,7 @@ class stackify::install(
   }
 
   file { $file_download_absolute_path:
-    ensure  => present,
+    ensure  => file,
     source  => $file_download_source,
     require => File[$file_download_directory],
   }
@@ -31,19 +30,19 @@ class stackify::install(
   $package_install_options_attach_all_integer = bool2num($package_install_options_attach_all)
   $package_install_options_enable_profiler_integer = bool2num($package_install_options_enable_profiler)
   $package_install_options_enable_enable_ipmask_integer = bool2num($package_install_options_enable_ipmask)
-  $package_install_options =  [
-      '/s',
-      "/v\"ACTIVATIONKEY=${package_install_options_activationkey}",
-      "ENVIRONMENT=\"${package_install_options_environment}\"",
-      "DEVICEALIAS=\"${package_install_options_device_alias}\"",
-      "IPMASK=${package_install_options_enable_enable_ipmask_integer}",
-      "ENABLEPROFILER=${package_install_options_enable_profiler_integer}",
-      'ENABLEREMOTE=True',
-      'RESTARTIIS=0',
-      "ATTACHALL=${package_install_options_attach_all_integer}",
-      '/qn' ,
-      '/l*v',
-      'C:\StackifyInstallLog.txt"' ]
+  $package_install_options = [
+    '/s',
+    "/v\"ACTIVATIONKEY=${package_install_options_activationkey}",
+    "ENVIRONMENT=\"${package_install_options_environment}\"",
+    "DEVICEALIAS=\"${package_install_options_device_alias}\"",
+    "IPMASK=${package_install_options_enable_enable_ipmask_integer}",
+    "ENABLEPROFILER=${package_install_options_enable_profiler_integer}",
+    'ENABLEREMOTE=True',
+    'RESTARTIIS=0',
+    "ATTACHALL=${package_install_options_attach_all_integer}",
+    '/qn' ,
+    '/l*v',
+  'C:\StackifyInstallLog.txt"']
 
   package { $package_name:
     ensure          => $package_ensure,

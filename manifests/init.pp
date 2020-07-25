@@ -3,7 +3,7 @@
 # Main class, includes all other classes.
 #
 # @param package_install_options_activationkey [String] Your stackify activation/license key
-class stackify(
+class stackify (
   String $package_install_options_activationkey,
   String $package_install_options_environment,
   String $package_install_options_device_alias = $stackify::params::package_install_options_device_alias,
@@ -21,8 +21,7 @@ class stackify(
   Boolean $service_manage = $stackify::params::service_manage,
   String $service_name_monitoring = $stackify::params::service_name_monitoring,
   String $service_name_health = $stackify::params::service_name_health,
-  ) inherits stackify::params  {
-
+) inherits stackify::params {
   class { 'stackify::install':
     package_ensure                          => $package_ensure,
     package_name                            => $package_name,
@@ -47,5 +46,4 @@ class stackify(
 
   Class['stackify::install']
   -> Class['stackify::service']
-
 }
