@@ -38,7 +38,7 @@ describe 'stackify::install' do
 
     it do
       is_expected.to contain_file('C:\\Binaries\\Stackify-Install-Latest.exe').with('ensure' => 'file',
-                                                                                    'source'  => 'http://s1.stackify.com/Account/AgentDownload',
+                                                                                    'source' => 'http://s1.stackify.com/Account/AgentDownload',
                                                                                     'require' => 'File[C:\\Binaries]')
     end
   end
