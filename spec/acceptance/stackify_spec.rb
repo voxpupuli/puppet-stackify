@@ -37,7 +37,7 @@ describe 'stackify' do
               package_install_options_environment   => '#{environment}',
               package_install_options_activationkey => '#{activation_key}',
           }
-        MANIFEST
+      MANIFEST
     end
 
     it 'runs without errors' do
@@ -97,7 +97,7 @@ describe 'stackify' do
               package_install_options_environment   => 'development',
               package_install_options_activationkey => 'XXXXXXXXXXXXXXXXXXXXXXXXXX',
           }
-        MANIFEST
+      MANIFEST
     end
 
     it 'runs without errors' do
