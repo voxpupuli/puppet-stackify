@@ -1,7 +1,7 @@
 # stackify
 
 [![License](https://img.shields.io/github/license/voxpupuli/puppet-stackify.svg)](https://github.com/voxpupuli/puppet-stackify/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/voxpupuli/puppet-stackify.png?branch=master)](https://travis-ci.org/voxpupuli/puppet-stackify)
+![Build Status](https://github.com/voxpupuli/puppet-stackify/actions/workflows/ci.yml/badge.svg?branch=master)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/puppet/stackify.svg)](https://forge.puppetlabs.com/puppet/stackify)
 [![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/puppet/stackify.svg)](https://forge.puppetlabs.com/puppet/stackify)
 [![Puppet Forge - scores](https://img.shields.io/puppetforge/f/puppet/stackify.svg)](https://forge.puppetlabs.com/puppet/stackify)
