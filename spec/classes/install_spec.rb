@@ -4,13 +4,13 @@ describe 'stackify::install' do
   context 'when package_ensure => present' do
     let(:facts) do
       {
-        networking: { hostname: 'DESKTOP-AT3' }
+        networking: { hostname: 'DESKTOP-AT3' },
       }
     end
     let(:params) do
       {
         package_install_options_environment: 'qa3',
-        package_install_options_activationkey: 'SomeSecretKey'
+        package_install_options_activationkey: 'SomeSecretKey',
       }
     end
 
@@ -28,7 +28,7 @@ describe 'stackify::install' do
                                                                  'ATTACHALL=1',
                                                                  '/qn',
                                                                  '/l*v',
-                                                                 'C:\StackifyInstallLog.txt"'
+                                                                 'C:\StackifyInstallLog.txt"',
                                                                ])
     end
 
@@ -46,14 +46,14 @@ describe 'stackify::install' do
   context 'when package_install_options_attach_all => false' do
     let(:facts) do
       {
-        networking: { hostname: 'DESKTOP-AT3' }
+        networking: { hostname: 'DESKTOP-AT3' },
       }
     end
     let(:params) do
       {
         package_install_options_environment: 'qa3',
         package_install_options_activationkey: 'SomeSecretKey',
-        package_install_options_attach_all: false
+        package_install_options_attach_all: false,
       }
     end
 
@@ -71,7 +71,7 @@ describe 'stackify::install' do
                                                                  'ATTACHALL=0',
                                                                  '/qn',
                                                                  '/l*v',
-                                                                 'C:\StackifyInstallLog.txt"'
+                                                                 'C:\StackifyInstallLog.txt"',
                                                                ])
     end
   end
@@ -79,14 +79,14 @@ describe 'stackify::install' do
   context 'when package_install_options_enable_profiler => false' do
     let(:facts) do
       {
-        networking: { hostname: 'DESKTOP-AT3' }
+        networking: { hostname: 'DESKTOP-AT3' },
       }
     end
     let(:params) do
       {
         package_install_options_environment: 'qa3',
         package_install_options_activationkey: 'SomeSecretKey',
-        package_install_options_enable_profiler: false
+        package_install_options_enable_profiler: false,
       }
     end
 
@@ -104,7 +104,7 @@ describe 'stackify::install' do
                                                                  'ATTACHALL=1',
                                                                  '/qn',
                                                                  '/l*v',
-                                                                 'C:\StackifyInstallLog.txt"'
+                                                                 'C:\StackifyInstallLog.txt"',
                                                                ])
     end
   end
@@ -112,14 +112,14 @@ describe 'stackify::install' do
   context 'when package_install_options_enable_ipmask => false' do
     let(:facts) do
       {
-        networking: { hostname: 'DESKTOP-AT3' }
+        networking: { hostname: 'DESKTOP-AT3' },
       }
     end
     let(:params) do
       {
         package_install_options_environment: 'qa3',
         package_install_options_activationkey: 'SomeSecretKey',
-        package_install_options_enable_ipmask: true
+        package_install_options_enable_ipmask: true,
       }
     end
 
@@ -137,7 +137,7 @@ describe 'stackify::install' do
                                                                  'ATTACHALL=1',
                                                                  '/qn',
                                                                  '/l*v',
-                                                                 'C:\StackifyInstallLog.txt"'
+                                                                 'C:\StackifyInstallLog.txt"',
                                                                ])
     end
   end
